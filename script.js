@@ -2,15 +2,6 @@
 const X_CLASS = "x"
 const CIRCLE_CLASS = "circle"
 
-const cellElements =document.querySelectorAll('[data-cell]')
-const board =document.getElementById('board')
-const winningMessageElement = document.getElementById('winningMessage')
-const winningMessageTextElement = document.querySelector('[data-winning-message-text]')
-const restartButton = document.getElementById('restartButton')
-
-
-let circleTurn
-
 const WINNING_COMBINATIONS = [
     [0, 1, 2],
     [3, 4, 5],
@@ -22,7 +13,13 @@ const WINNING_COMBINATIONS = [
     [2, 4, 6],
 ]
 
+const cellElements =document.querySelectorAll('[data-cell]')
+const board =document.getElementById('board')
+const winningMessageElement = document.getElementById('winningMessage')
+const winningMessageTextElement = document.querySelector('[data-winning-message-text]')
+const restartButton = document.getElementById('restartButton')
 
+let circleTurn
 
 
 const handleClick=(e)=>{
@@ -49,7 +46,7 @@ const placeMark = (cell, currentClass)=>{
 
 const endGame = (draw) =>{
    if(draw){
-        winningMessageElement.innerText = 'Draw!'
+        winningMessageTextElement.innerText = 'Draw!'
     } else (
         winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins :)`
     )

@@ -149,4 +149,5 @@ body {
 
 .winning-message.show {
   display: flex;
+  justify-content: center;
 }
